@@ -17,11 +17,11 @@
 
   <ItemGroup>
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+    <Compile Remove="assets\**" />
+    <Content Remove="assets\**" />
     <Content Remove="ClientApp\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="assets\img\" />
+    <EmbeddedResource Remove="assets\**" />
+    <None Remove="assets\**" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
